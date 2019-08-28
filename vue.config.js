@@ -1,14 +1,16 @@
-const path = require('path')
+const path = require('path');
 
-function resolve (dir) {
-  return path.join(__dirname, dir)
+function resolve(dir) {
+  return path.join(__dirname, dir);
 }
 
 module.exports = {
-  chainWebpack (config) {
-    config.resolve.alias.set('pages', resolve('src/pages'))
-    // .set('common', resolve('src/common'))
-    // .set('api', resolve('src/api'))
-    // .set('base', resolve('src/base'))
+  chainWebpack(config) {
+    config.resolve.alias
+      .set('components', resolve('src/components'))
+      .set('assets', resolve('src/assets'))
+      .set('base', resolve('src/base'))
+      .set('api', resolve('src/api'))
+      .set('common', resolve('src/common'));
   }
-}
+};

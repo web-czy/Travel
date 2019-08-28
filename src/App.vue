@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
+  <div class="app">
     <home></home>
   </div>
 </template>
 
 <script>
-import Home from 'pages/home/home'
+import Home from 'components/home/home'
 
 export default {
   name: 'app',
@@ -14,12 +14,4 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
-#app
-  font-family: 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
-  text-align: center
-  color: #2c3e50
-  margin-top: 60px
-</style>
+<style lang="stylus"></style>
