@@ -1,13 +1,13 @@
 <template>
   <div class="home">
     <v-header></v-header>
-    <!-- <v-swiper></v-swiper> -->
+    <v-swiper :swiperImg="swiperOption"></v-swiper>
   </div>
 </template>
 
 <script type='text/ecmascript-6'>
 import VHeader from 'components/v-header/v-header'
-// import VSwiper from 'base/v-swiper/v-swiper'
+import VSwiper from 'base/v-swiper/v-swiper'
 
 export default {
   name: 'Home',
@@ -43,7 +43,8 @@ export default {
     }
   },
   components: {
-    VHeader
+    VHeader,
+    VSwiper
   }
 }
 </script>
