@@ -3,6 +3,7 @@
     <v-header></v-header>
     <v-swiper></v-swiper>
     <icons></icons>
+    <recommend></recommend>
   </div>
 </template>
 
@@ -10,13 +11,15 @@
 import VHeader from './components/v-header'
 import VSwiper from './components/v-swiper'
 import Icons from './components/icons'
+import Recommend from './components/recommend'
 
 export default {
   name: 'Home',
   components: {
     VHeader,
     VSwiper,
-    Icons
+    Icons,
+    Recommend
   }
 }
 </script>
