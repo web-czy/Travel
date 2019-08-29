@@ -1,6 +1,9 @@
 <template>
   <div class="swiper">
-    <swiper :options="swiperOption">
+    <swiper
+      id="v-swiper"
+      :options="swiperOption"
+    >
       <swiper-slide
         v-for="item in swiperList"
         :key="item.id"
