@@ -27,7 +27,7 @@ export default {
   .back
     padding: 0 0.2rem
     width: 0.4rem
-    font-size: 0.36rem
+    font-size: $font-size-large-x
   .search
     flex: 1
     height: 0.6rem
@@ -41,5 +41,5 @@ export default {
     padding: 0 0.2rem
     .iconjiantou
       margin-left: 0.05rem
-      font-size: 0.12rem
+      font-size: $font-size-small-s
 </style>

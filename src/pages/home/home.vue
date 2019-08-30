@@ -2,8 +2,9 @@
   <div class="home">
     <v-header></v-header>
     <v-swiper></v-swiper>
-    <icons></icons>
-    <recommend></recommend>
+    <icons class="white-bg"></icons>
+    <recommend class="white-bg margin-top"></recommend>
+    <weekend class="white-bg margin-top"></weekend>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import VHeader from './components/v-header'
 import VSwiper from './components/v-swiper'
 import Icons from './components/icons'
 import Recommend from './components/recommend'
+import Weekend from './components/weekend'
 
 export default {
   name: 'Home',
@@ -19,9 +21,15 @@ export default {
     VHeader,
     VSwiper,
     Icons,
-    Recommend
+    Recommend,
+    Weekend
   }
 }
 </script>
 
-<style scoped lang='stylus' rel='stylesheet/stylus'></style>
+<style scoped lang='stylus' rel='stylesheet/stylus'>
+.white-bg
+  background: #ffffff
+.margin-top
+  margin-top: 0.2rem
+</style>

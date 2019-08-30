@@ -125,6 +125,7 @@ export default {
   height: 1.5rem
   padding-top: 0.1rem
   text-align: center
+  font-size: $font-size-medium-m
   color: $color-text
   img
     width: 1.1rem
