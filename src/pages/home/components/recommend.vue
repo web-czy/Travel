@@ -1,21 +1,19 @@
 <template>
   <div class="recommend">
     <div class="recommend-title">
-      <img src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png" />
+      <img
+        src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png"
+      />
       <span>猜你喜欢</span>
     </div>
     <ul class="recommend-list">
-      <li
-        class="item"
-        v-for="item in recommendList"
-        :key="item.id"
-      >
+      <li class="item" v-for="item in recommendList" :key="item.id">
         <div class="img-wrapper">
-          <div class="tag">{{item.tag}}</div>
+          <div class="tag">{{ item.tag }}</div>
           <img :src="item.imgUrl" />
         </div>
         <div class="info">
-          <div class="title">{{item.title}}</div>
+          <div class="title">{{ item.title }}</div>
           <div class="rating">
             <div class="star">
               <i
@@ -24,19 +22,17 @@
                 :key="index"
               ></i>
             </div>
-            <div class="evaluate">{{item.evaluate}}条评论</div>
+            <div class="evaluate">{{ item.evaluate }}条评论</div>
           </div>
           <div class="price">
-            <span>￥{{item.price}}</span>起
+            <span>￥{{ item.price }}</span
+            >起
           </div>
-          <div
-            class="desc"
-            v-if="item.desc"
-          >
-            <span class="text">{{item.desc}}</span>
+          <div class="desc" v-if="item.desc">
+            <span class="text">{{ item.desc }}</span>
           </div>
         </div>
-        <div class="region">{{item.region}}</div>
+        <div class="region">{{ item.region }}</div>
       </li>
     </ul>
   </div>
@@ -44,58 +40,12 @@
 
 <script type='text/ecmascript-6'>
 export default {
-  data() {
-    return {
-      recommendList: [
-        {
-          id: '0001',
-          tag: '随买随用',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg',
-          title: '北京欢乐谷',
-          evaluate: 545455,
-          price: 195,
-          desc: '亚洲唯一飞行式过山车等你来挑战',
-          region: '朝阳区'
-        },
-        {
-          id: '0002',
-          tag: '随买随用',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1804/1a/1a48cc20b0d6ed44a3.img.jpg_200x200_32e22bed.jpg',
-          title: '奥林匹克塔',
-          evaluate: 419,
-          price: 121.9,
-          region: '朝阳区'
-        },
-        {
-          id: '0003',
-          tag: '随买随用',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-          title: '故宫',
-          evaluate: 461758,
-          price: 195,
-          desc: '世界五大宫之首，穿越与您近在咫尺',
-          region: '东城区'
-        },
-        {
-          id: '0004',
-          tag: '可订今日',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/201308/08/41150dacc0e3a0c8c8d65eac.jpg_200x200_c62292e9.jpg',
-          title: '北京动物园',
-          evaluate: 9318,
-          price: 180,
-          region: '朝阳区'
-        },
-        {
-          id: '0005',
-          tag: '随买随用',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_200x200_2458ffb2.jpg',
-          title: '八达岭长城',
-          evaluate: 67560,
-          price: 40,
-          desc: '不到长城非好汉',
-          region: '延庆县'
-        }
-      ]
+  props: {
+    recommendList: {
+      type: Array,
+      default() {
+        return []
+      }
     }
   }
 }

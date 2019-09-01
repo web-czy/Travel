@@ -1,0 +1,158 @@
+{
+  "home": {
+    "city": "北京",
+    "swiperList": [{
+        "id": "0001",
+        "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20198/fffc0c06ddfe6fa9bad3cd813b591873.jpg_750x200_528c2db7.jpg"
+      },
+      {
+        "id": "0002",
+        "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/87a224d0349d94a11e97f31aa1aba4f5.jpg_750x200_1f78af87.jpg"
+      },
+      {
+        "id": "0003",
+        "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/d7bbc21db442366a882e04ddc984669a.jpg_750x200_85e640d9.jpg"
+      },
+      {
+        "id": "0004",
+        "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20198/eb3fdb7ff86de0160cafe76b6a6a8ee3.jpg_750x200_e6930e5c.jpg"
+      },
+      {
+        "id": "0005",
+        "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20197/0b0622e5b6ac5fbed3084dd2832e6f8f.jpg_750x200_895321b6.jpg"
+      }
+    ],
+    "iconList": [{
+        "id": "0001",
+        "desc": "景点门票",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png"
+      },
+      {
+        "id": "0002",
+        "desc": "故宫",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/6c/9e54a8540fee0102.png"
+      },
+      {
+        "id": "0003",
+        "desc": "北京必游",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png"
+      },
+      {
+        "id": "0004",
+        "desc": "水上乐园",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png"
+      },
+      {
+        "id": "0005",
+        "desc": "一日游",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png"
+      },
+      {
+        "id": "0006",
+        "desc": "古北水镇",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/67/9a1678221b8e0e02.png"
+      },
+      {
+        "id": "0007",
+        "desc": "动植物园",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png"
+      },
+      {
+        "id": "0008",
+        "desc": "奥林匹克塔",
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/b6/37560ece9c62b502.png"
+      },
+      {
+        "id": "0009",
+        "desc": "北京世园会",
+        "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/b4511345827006994aa1980a3886f0ac.png"
+      },
+      {
+        "id": "0010",
+        "desc": "优惠券",
+        "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20197/bf88c62458044ca2ef9d733690eef3fc.png"
+      }
+    ],
+    "recommendList": [{
+        "id": "0001",
+        "tag": "随买随用",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg",
+        "title": "北京欢乐谷",
+        "evaluate": 545455,
+        "price": 195,
+        "desc": "亚洲唯一飞行式过山车等你来挑战",
+        "region": "朝阳区"
+      },
+      {
+        "id": "0002",
+        "tag": "随买随用",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/1804/1a/1a48cc20b0d6ed44a3.img.jpg_200x200_32e22bed.jpg",
+        "title": "奥林匹克塔",
+        "evaluate": 419,
+        "price": 121.9,
+        "region": "朝阳区"
+      },
+      {
+        "id": "0003",
+        "tag": "随买随用",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg",
+        "title": "故宫",
+        "evaluate": 461758,
+        "price": 195,
+        "desc": "世界五大宫之首，穿越与您近在咫尺",
+        "region": "东城区"
+      },
+      {
+        "id": "0004",
+        "tag": "可订今日",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/201308/08/41150dacc0e3a0c8c8d65eac.jpg_200x200_c62292e9.jpg",
+        "title": "北京动物园",
+        "evaluate": 9318,
+        "price": 180,
+        "region": "朝阳区"
+      },
+      {
+        "id": "0005",
+        "tag": "随买随用",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_200x200_2458ffb2.jpg",
+        "title": "八达岭长城",
+        "evaluate": 67560,
+        "price": 40,
+        "desc": "不到长城非好汉",
+        "region": "延庆县"
+      }
+    ],
+    "weekendList": [{
+        "id": "0001",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg",
+        "title": "京城周末撒欢",
+        "desc": "在帝都过周末，不仅仅是城中游！"
+      },
+      {
+        "id": "0002",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1811/7e/476589267ebb41.jpg_r_640x214_bf599709.jpg",
+        "title": "京城溜娃必去",
+        "desc": "德智体美劳全面发展的亲子日，这些地方该去看看…"
+      },
+      {
+        "id": "0003",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1505/aa/7baaf8a851d221.jpg_r_640x214_1431200f.jpg",
+        "title": "帝都必打卡",
+        "desc": "来北京必去的景点非这些地方莫属"
+      },
+      {
+        "id": "0004",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1606/85/c6b6bad1b977e.jpg_r_640x214_5c638941.jpg",
+        "title": "漂流勇进，烧烤露营",
+        "desc": "轻松水上漂，任我乐逍遥"
+      },
+      {
+        "id": "0005",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1505/53/02091f1ee43d0a.jpg_r_640x214_2e3256b1.jpg",
+        "title": "北京清凉避暑胜地",
+        "desc": "到大自然中享受“天然空调”的清凉"
+      }
+    ]
+
+  }
+}

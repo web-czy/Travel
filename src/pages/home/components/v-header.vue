@@ -4,14 +4,22 @@
     <div class="back">
       <i class="iconfont iconfanhui"></i>
     </div>
-    <div class="search"><i class="iconfont iconsousuo"></i>输入城市/景点/游玩主题</div>
-    <div class="city">城市<i class="iconfont iconjiantou"></i></div>
+    <div class="search">
+      <i class="iconfont iconsousuo"></i>输入城市/景点/游玩主题
+    </div>
+    <div class="city">{{ this.city }}<i class="iconfont iconjiantou"></i></div>
   </div>
 </template>
 
 <script type='text/ecmascript-6'>
 export default {
-  name: 'VHeader'
+  name: 'VHeader',
+  props: {
+    city: {
+      type: String,
+      default: '北'
+    }
+  }
 }
 </script>
 

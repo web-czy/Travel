@@ -1,10 +1,16 @@
 <template>
   <div class="home">
-    <v-header></v-header>
-    <v-swiper></v-swiper>
+    <v-header :city="home.city"></v-header>
+    <v-swiper :swiperList="home.swiperList"></v-swiper>
     <icons class="white-bg"></icons>
-    <recommend class="white-bg margin-top"></recommend>
-    <weekend class="white-bg margin-top"></weekend>
+    <recommend
+      :recommendList="home.recommendList"
+      class="white-bg margin-top"
+    ></recommend>
+    <weekend
+      :weekendList="home.weekendList"
+      class="white-bg margin-top"
+    ></weekend>
   </div>
 </template>
 
@@ -14,9 +20,25 @@ import VSwiper from './components/v-swiper'
 import Icons from './components/icons'
 import Recommend from './components/recommend'
 import Weekend from './components/weekend'
+import { getHome } from 'api'
 
 export default {
   name: 'Home',
+  data() {
+    return {
+      home: {}
+    }
+  },
+  created() {
+    this.getHomeInfo()
+  },
+  methods: {
+    getHomeInfo() {
+      getHome().then((home) => {
+        this.home = Object.assign({}, this.home, home)
+      })
+    }
+  },
   components: {
     VHeader,
     VSwiper,
