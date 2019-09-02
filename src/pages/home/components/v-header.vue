@@ -7,7 +7,13 @@
     <div class="search">
       <i class="iconfont iconsousuo"></i>输入城市/景点/游玩主题
     </div>
-    <div class="city">{{ this.city }}<i class="iconfont iconjiantou"></i></div>
+    <router-link
+      to="/city"
+      class="city"
+      tag="div"
+    >
+      {{ this.city }}<i class="iconfont iconjiantou"></i>
+    </router-link>
   </div>
 </template>
 
@@ -17,7 +23,7 @@ export default {
   props: {
     city: {
       type: String,
-      default: '北'
+      default: '城市'
     }
   }
 }
@@ -29,7 +35,7 @@ export default {
 .header
   display: flex
   align-items: center
-  height: 0.88rem
+  height: $headerHeight
   background-color: $color-background
   color: $color-white
   .back

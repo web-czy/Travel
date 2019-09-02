@@ -1,14 +1,17 @@
 <template>
   <div class="home">
     <v-header :city="home.city"></v-header>
-    <v-swiper :swiperList="home.swiperList"></v-swiper>
-    <icons class="white-bg"></icons>
+    <v-swiper :list="home.swiperList"></v-swiper>
+    <icons
+      :list="home.iconList"
+      class="white-bg"
+    ></icons>
     <recommend
-      :recommendList="home.recommendList"
+      :list="home.recommendList"
       class="white-bg margin-top"
     ></recommend>
     <weekend
-      :weekendList="home.weekendList"
+      :list="home.weekendList"
       class="white-bg margin-top"
     ></weekend>
   </div>

@@ -4,7 +4,11 @@
       <span>周末去哪儿</span>
     </div>
     <ul class="weekend-list">
-      <li class="item" v-for="item in weekendList" :key="item.id">
+      <li
+        class="item"
+        v-for="item in list"
+        :key="item.id"
+      >
         <div class="img-wrapper">
           <img :src="item.imgUrl" />
         </div>
@@ -20,7 +24,7 @@
 <script type='text/ecmascript-6'>
 export default {
   props: {
-    weekendList: {
+    list: {
       type: Array,
       default() {
         return []

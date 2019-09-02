@@ -1,13 +1,15 @@
 <template>
   <div class="recommend">
     <div class="recommend-title">
-      <img
-        src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png"
-      />
+      <img src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png" />
       <span>猜你喜欢</span>
     </div>
     <ul class="recommend-list">
-      <li class="item" v-for="item in recommendList" :key="item.id">
+      <li
+        class="item"
+        v-for="item in list"
+        :key="item.id"
+      >
         <div class="img-wrapper">
           <div class="tag">{{ item.tag }}</div>
           <img :src="item.imgUrl" />
@@ -25,10 +27,12 @@
             <div class="evaluate">{{ item.evaluate }}条评论</div>
           </div>
           <div class="price">
-            <span>￥{{ item.price }}</span
-            >起
+            <span>￥{{ item.price }}</span>起
           </div>
-          <div class="desc" v-if="item.desc">
+          <div
+            class="desc"
+            v-if="item.desc"
+          >
             <span class="text">{{ item.desc }}</span>
           </div>
         </div>
@@ -41,7 +45,7 @@
 <script type='text/ecmascript-6'>
 export default {
   props: {
-    recommendList: {
+    list: {
       type: Array,
       default() {
         return []
