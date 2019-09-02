@@ -1,50 +1,52 @@
 <template>
   <div class="list">
-    <div class="area">
-      <div class="title">热门城市</div>
-      <div class="button-list">
-        <div class="button-wrapper">
-          <div class="button">北京</div>
-        </div>
-        <div class="button-wrapper">
-          <div class="button">北京</div>
-        </div>
-        <div class="button-wrapper">
-          <div class="button">北京</div>
-        </div>
-        <div class="button-wrapper">
-          <div class="button">北京</div>
-        </div>
-        <div class="button-wrapper">
-          <div class="button">北京</div>
+    <div>
+      <div class="area">
+        <div class="title">热门城市</div>
+        <div class="button-list">
+          <div class="button-wrapper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-wrapper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-wrapper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-wrapper">
+            <div class="button">北京</div>
+          </div>
+          <div class="button-wrapper">
+            <div class="button">北京</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="area">
-      <div class="title">A</div>
-      <div class="item-list">
-        <div class="item border-bottom">上海</div>
-        <div class="item border-bottom">上海</div>
-        <div class="item border-bottom">上海</div>
-        <div class="item border-bottom">上海</div>
+      <div class="area">
+        <div class="title">A</div>
+        <div class="item-list">
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+        </div>
       </div>
-    </div>
-    <div class="area">
-      <div class="title">A</div>
-      <div class="item-list">
-        <div class="item border-bottom">上海</div>
-        <div class="item border-bottom">上海</div>
-        <div class="item border-bottom">上海</div>
-        <div class="item border-bottom">上海</div>
+      <div class="area">
+        <div class="title">A</div>
+        <div class="item-list">
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+        </div>
       </div>
-    </div>
-    <div class="area">
-      <div class="title">A</div>
-      <div class="item-list">
-        <div class="item border-bottom">上海</div>
-        <div class="item border-bottom">上海</div>
-        <div class="item border-bottom">上海</div>
-        <div class="item border-bottom">上海</div>
+      <div class="area">
+        <div class="title">A</div>
+        <div class="item-list">
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+        </div>
       </div>
     </div>
   </div>
@@ -62,6 +64,12 @@ export default {
 .border-bottom
   border-bottom: 1px solid #ccc
 .list
+  position: absolute
+  top: 1.6rem
+  right: 0
+  bottom: 0
+  left: 0
+  overflow: hidden
   .title
     padding-left: 0.2rem
     line-height: 0.44rem
