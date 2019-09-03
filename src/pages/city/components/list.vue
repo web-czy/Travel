@@ -1,5 +1,5 @@
 <template>
-  <div class="list">
+  <scroll class="list">
     <div>
       <div class="area">
         <div class="title">热门城市</div>
@@ -48,13 +48,45 @@
           <div class="item border-bottom">上海</div>
         </div>
       </div>
+      <div class="area">
+        <div class="title">A</div>
+        <div class="item-list">
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+        </div>
+      </div>
+      <div class="area">
+        <div class="title">A</div>
+        <div class="item-list">
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+        </div>
+      </div>
+      <div class="area">
+        <div class="title">A</div>
+        <div class="item-list">
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+          <div class="item border-bottom">上海</div>
+        </div>
+      </div>
     </div>
-  </div>
+  </scroll>
 </template>
 
 <script type='text/ecmascript-6'>
+import Scroll from 'base/scroll/scroll'
+
 export default {
-  name: 'CityList'
+  name: 'CityList',
+  components: {
+    Scroll
+  }
 }
 </script>
 
