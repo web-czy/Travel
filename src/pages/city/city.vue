@@ -2,10 +2,7 @@
   <div class="city">
     <city-header></city-header>
     <city-search></city-search>
-    <city-list
-      :hot="hotCities"
-      :cities="cities"
-    ></city-list>
+    <city-list :city="city"></city-list>
   </div>
 </template>
 
@@ -19,8 +16,7 @@ export default {
   name: 'city',
   data() {
     return {
-      hotCities: [],
-      cities: {}
+      city: {}
     }
   },
   created() {
@@ -29,8 +25,7 @@ export default {
   methods: {
     getCityInfo() {
       getCity().then((city) => {
-        this.hotCities = Object.assign([], this.hotCities, city.hotCities)
-        this.cities = Object.assign({}, this.cities, city.cities)
+        this.city = Object.assign({}, this.city, city)
       })
     }
   },
