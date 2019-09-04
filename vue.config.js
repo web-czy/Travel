@@ -1,6 +1,7 @@
 const path = require('path');
 const appData = require('./data.json');
 const home = appData.home;
+const city = appData.city;
 
 function resolve(dir) {
   return path.join(__dirname, dir);
@@ -13,6 +14,12 @@ module.exports = {
         res.json({
           errno: 0,
           data: home
+        });
+      });
+      app.get('/api/city', function(req, res) {
+        res.json({
+          errno: 0,
+          data: city
         });
       });
     }

@@ -7,7 +7,8 @@
     <ul class="recommend-list">
       <li
         class="item"
-        v-for="item in list"
+        :class="{'border-bottom': index < list.length - 1}"
+        v-for="(item, index) in list"
         :key="item.id"
       >
         <div class="img-wrapper">
@@ -60,6 +61,8 @@ export default {
 @import '~assets/styles/mixins.styl'
 
 .recommend
+  .border-bottom::before
+    border-color: #e0e0e0
   .recommend-title
     padding: 0.25rem
     display: flex
@@ -77,7 +80,6 @@ export default {
       position: relative
       display: flex
       padding: 0.2rem 0
-      border-bottom: 1px solid #e0e0e0
       .img-wrapper
         position: relative
         width: 2rem

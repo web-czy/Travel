@@ -1,18 +1,13 @@
 <template>
   <div class="app">
-    <home></home>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Home from 'pages/home/home'
 
 export default {
-  name: 'app',
-  components: {
-    Home
-  }
+  name: 'app'
 }
 </script>
 <style lang="stylus"></style>

@@ -2,7 +2,10 @@
   <div class="city">
     <city-header></city-header>
     <city-search></city-search>
-    <city-list></city-list>
+    <city-list
+      :hot="hotCities"
+      :cities="cities"
+    ></city-list>
   </div>
 </template>
 
@@ -10,9 +13,27 @@
 import CityHeader from './components/header'
 import CitySearch from './components/search'
 import CityList from './components/list'
+import { getCity } from 'api'
 
 export default {
   name: 'city',
+  data() {
+    return {
+      hotCities: [],
+      cities: {}
+    }
+  },
+  created() {
+    this.getCityInfo()
+  },
+  methods: {
+    getCityInfo() {
+      getCity().then((city) => {
+        this.hotCities = Object.assign([], this.hotCities, city.hotCities)
+        this.cities = Object.assign({}, this.cities, city.cities)
+      })
+    }
+  },
   components: {
     CityHeader,
     CitySearch,
