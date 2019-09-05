@@ -2,29 +2,42 @@
   <scroll
     class="listview"
     ref="listview"
-    :listenScroll="listenScroll"
-    :probeType="probeType"
+    :data="allCity"
+    :probe-type="probeType"
+    :listen-scroll="listenScroll"
     @scroll="scroll"
   >
     <div>
       <div
         class="list-group"
         ref="listGroup"
-        v-for="(group, key) in city"
+        v-for="(group, key) of allCity"
         :key="key"
       >
         <div class="title">{{ key }}</div>
-        <div class="button-list" v-if="showHot(key)">
-          <div class="button-wrapper" v-for="item in group" :key="item.id">
+        <div
+          class="button-list"
+          v-if="showHot(key)"
+        >
+          <div
+            class="button-wrapper"
+            v-for="item in group"
+            :key="item.id"
+            @click="selectItem(item.name)"
+          >
             <div class="button">{{ item.name }}</div>
           </div>
         </div>
-        <div class="item-list" v-else>
+        <div
+          class="item-list"
+          v-else
+        >
           <div
             class="item"
             :class="{ 'border-bottom': index < group.length - 1 }"
             v-for="(item, index) in group"
             :key="item.id"
+            @click="selectItem(item.name)"
           >
             {{ item.name }}
           </div>
@@ -35,6 +48,7 @@
       class="list-shortcut"
       @touchstart="onShortcutTouchStart"
       @touchmove.stop="onShortcutTouchMove"
+      @touchmove.prevent
     >
       <ul>
         <li
@@ -48,7 +62,11 @@
         </li>
       </ul>
     </div>
-    <div class="list-fixed" ref="listFixed" v-show="fixedTitle">
+    <div
+      class="list-fixed"
+      ref="listFixed"
+      v-show="fixedTitle"
+    >
       <div class="fixed-title">{{ fixedTitle }}</div>
     </div>
   </scroll>
@@ -57,6 +75,7 @@
 <script type='text/ecmascript-6'>
 import Scroll from 'base/scroll/scroll'
 import { getData } from 'assets/js/dom'
+import { mapMutations } from 'vuex'
 
 const ANCHOR_HEIGHT = 20
 const TITLE_HEIGHT = 27
@@ -64,7 +83,7 @@ const TITLE_HEIGHT = 27
 export default {
   name: 'CityList',
   props: {
-    city: {
+    allCity: {
       type: Object,
       default() {
         return {}
@@ -74,7 +93,8 @@ export default {
   data() {
     return {
       scrollY: -1,
-      currentIndex: 0
+      currentIndex: 0,
+      diff: -1
     }
   },
   created() {
@@ -85,13 +105,18 @@ export default {
   },
   computed: {
     shortcutList() {
-      return Object.keys(this.city)
+      return this.titleList.map((item) => {
+        return item.substr(0, 1)
+      })
+    },
+    titleList() {
+      return Object.keys(this.allCity)
     },
     fixedTitle() {
       if (this.scrollY > 0) {
         return ''
       }
-      return this.shortcutList[this.currentIndex] ? this.shortcutList[this.currentIndex] : ''
+      return this.titleList[this.currentIndex] ? this.titleList[this.currentIndex] : ''
     }
   },
   methods: {
@@ -137,10 +162,17 @@ export default {
         height += item.clientHeight
         this.listHeight.push(height)
       }
-    }
+    },
+    selectItem(city) {
+      this.changeCity(city)
+      this.$router.push('/home')
+    },
+    ...mapMutations([
+      'changeCity'
+    ])
   },
   watch: {
-    city() {
+    allCity() {
       setTimeout(() => {
         this._calculateHeight()
       }, 20)
@@ -150,7 +182,7 @@ export default {
         this.currentIndex = 0
         return
       }
-      let listHeight = this.listHeight
+      const listHeight = this.listHeight
       for (let i = 0; i < listHeight.length - 1; i++) {
         let height1 = listHeight[i]
         let height2 = listHeight[i + 1]
@@ -167,8 +199,8 @@ export default {
       if (this.fixedTop === fixedTop) {
         return
       }
-      this.fixedTop = fixedTop
-      this.$refs.listFixed.transform = `translate3d(0, $(this.fixtedTop*2}rem, 0)`
+      this.fixedTop = (fixedTop * 2) / 100
+      this.$refs.listFixed.style.transform = `translate3d(0, ${this.fixedTop}rem, 0)`
     }
   },
   components: {
@@ -218,7 +250,7 @@ export default {
     flex-direction: column
     justify-content: center
     position: absolute
-    z-index: 30
+    z-index: 1
     right: 0.1rem
     top: 50%
     transform: translateY(-50%)
@@ -242,6 +274,7 @@ export default {
     width: 100%
     height: 0.54rem
     background: $color-title-bg
+    // transform: translate3d(0, -0.32rem, 0)
     .fixed-title
       padding-left: 0.2rem
       height: 0.54rem

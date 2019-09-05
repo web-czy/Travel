@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <v-header :city="home.city"></v-header>
+    <v-header></v-header>
     <scroll
       class="wrapper"
       :data="home"

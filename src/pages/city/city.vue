@@ -1,8 +1,8 @@
 <template>
   <div class="city">
     <city-header></city-header>
-    <city-search></city-search>
-    <city-list :city="city"></city-list>
+    <city-search :cities="cities"></city-search>
+    <city-list :allCity="allCity"></city-list>
   </div>
 </template>
 
@@ -16,16 +16,24 @@ export default {
   name: 'city',
   data() {
     return {
-      city: {}
+      allCity: {}
     }
   },
   created() {
     this.getCityInfo()
   },
+  computed: {
+    cities() {
+      let transferList = JSON.stringify(this.allCity);
+      let list = JSON.parse(transferList);
+      delete list['热门城市']
+      return list
+    }
+  },
   methods: {
     getCityInfo() {
-      getCity().then((city) => {
-        this.city = Object.assign({}, this.city, city)
+      getCity().then((allCity) => {
+        this.allCity = Object.assign({}, this.allCity, allCity)
       })
     }
   },

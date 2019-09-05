@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 import BScroll from 'better-scroll'
 
 export default {
@@ -15,7 +15,7 @@ export default {
     },
     click: {
       type: Boolean,
-      default: true
+      default: false
     },
     listenScroll: {
       type: Boolean,
@@ -24,6 +24,18 @@ export default {
     data: {
       type: [Array, Object],
       default: null
+    },
+    pullup: {
+      type: Boolean,
+      default: false
+    },
+    beforeScroll: {
+      type: Boolean,
+      default: false
+    },
+    refreshDelay: {
+      type: Number,
+      default: 20
     }
   },
   mounted() {
@@ -48,6 +60,22 @@ export default {
           me.$emit('scroll', pos)
         })
       }
+
+      if (this.pullup) {
+        this.scroll.on('scrollEnd', () => {
+          // 如果小于这个值，说明快滚动到底部了
+          // 意为滚动到距离最底部50或者更往下的地方，派发事件
+          if (this.scroll.y <= (this.scroll.maxScrollY + 50)) {
+            this.$emit('scrollToEnd')
+          }
+        })
+      }
+
+      if (this.beforeScroll) {
+        this.scroll.on('beforeScrollStart', () => {
+          this.$emit('beforeScroll')
+        })
+      }
     },
     enable() {
       this.scroll && this.scroll.enable()
@@ -69,10 +97,10 @@ export default {
     data() {
       setTimeout(() => {
         this.refresh()
-      }, 20)
+      }, this.refreshDelay)
     }
   }
 }
 </script>
 
-<style scoped lang='stylus' rel='stylesheet/stylus'></style>
+<style scoped lang="stylus" rel="stylesheet/stylus">

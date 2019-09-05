@@ -12,19 +12,20 @@
       class="city"
       tag="div"
     >
-      {{ this.city }}<i class="iconfont iconjiantou"></i>
+      {{ this.doubleCity }}<i class="iconfont iconjiantou"></i>
     </router-link>
   </div>
 </template>
 
 <script type='text/ecmascript-6'>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'VHeader',
-  props: {
-    city: {
-      type: String,
-      default: '城市'
-    }
+  computed: {
+    ...mapGetters([
+      'doubleCity'
+    ])
   }
 }
 </script>
