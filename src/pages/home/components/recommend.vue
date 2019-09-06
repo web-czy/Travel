@@ -10,6 +10,7 @@
         :class="{'border-bottom': index < list.length - 1}"
         v-for="(item, index) in list"
         :key="item.id"
+        @click="selectItem(item.id)"
       >
         <div class="img-wrapper">
           <div class="tag">{{ item.tag }}</div>
@@ -51,6 +52,11 @@ export default {
       default() {
         return []
       }
+    }
+  },
+  methods: {
+    selectItem(id) {
+      this.$router.push(`/detail/${id}`)
     }
   }
 }

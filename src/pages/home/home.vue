@@ -32,20 +32,32 @@ import Recommend from './components/recommend'
 import Weekend from './components/weekend'
 import Scroll from 'base/scroll/scroll'
 import { getHome } from 'api'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Home',
   data() {
     return {
+      lastCity: '',
       home: {}
     }
   },
-  created() {
+  mounted() {
+    this.lastCity = this.city
     this.getHomeInfo()
+  },
+  activated() {
+    if (this.lastCity !== this.city) {
+      this.lastCity = this.city
+      this.getHomeInfo()
+    }
+  },
+  computed: {
+    ...mapState(['city'])
   },
   methods: {
     getHomeInfo() {
-      getHome().then((home) => {
+      getHome({ city: this.city }).then((home) => {
         this.home = Object.assign({}, this.home, home)
       })
     }

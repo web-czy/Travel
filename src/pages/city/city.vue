@@ -2,7 +2,10 @@
   <div class="city">
     <city-header></city-header>
     <city-search :cities="cities"></city-search>
-    <city-list :allCity="allCity"></city-list>
+    <city-list
+      :hotCities="hotCities"
+      :cities="cities"
+    ></city-list>
   </div>
 </template>
 
@@ -16,24 +19,20 @@ export default {
   name: 'city',
   data() {
     return {
-      allCity: {}
+      hotCities: [],
+      cities: {}
     }
   },
   created() {
     this.getCityInfo()
   },
   computed: {
-    cities() {
-      let transferList = JSON.stringify(this.allCity);
-      let list = JSON.parse(transferList);
-      delete list['热门城市']
-      return list
-    }
   },
   methods: {
     getCityInfo() {
       getCity().then((allCity) => {
-        this.allCity = Object.assign({}, this.allCity, allCity)
+        this.hotCities = Object.assign([], this.hotCities, allCity.hotCities)
+        this.cities = Object.assign({}, this.cities, allCity.cities)
       })
     }
   },

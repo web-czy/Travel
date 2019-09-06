@@ -2,36 +2,43 @@
   <scroll
     class="listview"
     ref="listview"
-    :data="allCity"
+    :data="cities"
     :probe-type="probeType"
     :listen-scroll="listenScroll"
     @scroll="scroll"
   >
-    <div>
+    <div ref="listGroup">
       <div
-        class="list-group"
-        ref="listGroup"
-        v-for="(group, key) of allCity"
-        :key="key"
+        class="area"
+        ref="currentCity"
       >
-        <div class="title">{{ key }}</div>
-        <div
-          class="button-list"
-          v-if="showHot(key)"
-        >
+        <div class="title">{{currentCityName}}</div>
+        <div class="button-list">
+          <div class="button-wrapper">
+            <div class="button">{{ city }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="area">
+        <div class="title">{{hotCityName}}</div>
+        <div class="button-list">
           <div
             class="button-wrapper"
-            v-for="item in group"
+            v-for="item in hotCities"
             :key="item.id"
             @click="selectItem(item.name)"
           >
             <div class="button">{{ item.name }}</div>
           </div>
         </div>
-        <div
-          class="item-list"
-          v-else
-        >
+      </div>
+      <div
+        class="area"
+        v-for="(group, key) of cities"
+        :key="key"
+      >
+        <div class="title">{{ key }}</div>
+        <div class="item-list">
           <div
             class="item"
             :class="{ 'border-bottom': index < group.length - 1 }"
@@ -56,7 +63,7 @@
           :key="item"
           :data-index="index"
           class="item"
-          :class="{ current: currentIndex === index }"
+          :class="{ current: shortcutIndex === index }"
         >
           {{ item }}
         </li>
@@ -75,15 +82,22 @@
 <script type='text/ecmascript-6'>
 import Scroll from 'base/scroll/scroll'
 import { getData } from 'assets/js/dom'
-import { mapMutations } from 'vuex'
+import { mapMutations, mapState } from 'vuex'
 
 const ANCHOR_HEIGHT = 20
 const TITLE_HEIGHT = 27
+const HOT = '热'
 
 export default {
   name: 'CityList',
   props: {
-    allCity: {
+    hotCities: {
+      type: Array,
+      default() {
+        return []
+      }
+    },
+    cities: {
       type: Object,
       default() {
         return {}
@@ -93,8 +107,13 @@ export default {
   data() {
     return {
       scrollY: -1,
+      // currentIndex是左侧grouplist的index
+      // 因为多一个当前城市，要映射到右侧，就减1
+      // 在shortcutIndex()里边
       currentIndex: 0,
-      diff: -1
+      diff: -1,
+      currentCityName: '当前城市',
+      hotCityName: '热门城市'
     }
   },
   created() {
@@ -104,30 +123,36 @@ export default {
     this.listHeight = []
   },
   computed: {
+    shortcutIndex() {
+      if (this.currentIndex < 1) {
+        return 0
+      }
+      return this.currentIndex - 1
+    },
     shortcutList() {
-      return this.titleList.map((item) => {
-        return item.substr(0, 1)
-      })
+      let list1 = [HOT]
+      let list2 = Object.keys(this.cities)
+      return list1.concat(list2)
     },
     titleList() {
-      return Object.keys(this.allCity)
+      let list1 = [this.currentCityName, this.hotCityName]
+      let list2 = Object.keys(this.cities)
+      return list1.concat(list2)
     },
     fixedTitle() {
       if (this.scrollY > 0) {
         return ''
       }
       return this.titleList[this.currentIndex] ? this.titleList[this.currentIndex] : ''
-    }
+    },
+    ...mapState(['city'])
   },
   methods: {
-    showHot(key) {
-      return key === '热门城市'
-    },
     scroll(pos) {
       this.scrollY = pos.y
     },
     onShortcutTouchStart(e) {
-      let anchorIndex = getData(e.target, 'index')
+      let anchorIndex = parseInt(getData(e.target, 'index'))
       let firstTouch = e.touches[0]
       this.touch.anchorIndex = anchorIndex
       this.touch.y1 = firstTouch.pageY
@@ -149,12 +174,12 @@ export default {
       } else if (index > this.listHeight.length - 2) {
         index = this.listHeight.length - 2
       }
-      this.$refs.listview.scrollToElement(this.$refs.listGroup[index], 0)
+      this.$refs.listview.scrollToElement(this.$refs.listGroup.children[index + 1], 0)
       this.scrollY = this.$refs.listview.scroll.y
     },
     _calculateHeight() {
       this.listHeight = []
-      const grouplist = this.$refs.listGroup
+      const grouplist = this.$refs.listGroup.children
       let height = 0
       this.listHeight.push(height)
       for (let i = 0; i < grouplist.length; i++) {
@@ -172,7 +197,7 @@ export default {
     ])
   },
   watch: {
-    allCity() {
+    cities() {
       setTimeout(() => {
         this._calculateHeight()
       }, 20)
@@ -221,7 +246,7 @@ export default {
   bottom: 0
   left: 0
   overflow: hidden
-  .list-group
+  .area
     .title
       padding-left: 0.2rem
       height: 0.54rem

@@ -7,25 +7,29 @@
     <div class="search">
       <i class="iconfont iconsousuo"></i>输入城市/景点/游玩主题
     </div>
-    <router-link
-      to="/city"
+    <div
       class="city"
-      tag="div"
+      @click="handleClickCity"
     >
-      {{ this.doubleCity }}<i class="iconfont iconjiantou"></i>
-    </router-link>
+      {{city}}<i class="iconfont iconjiantou"></i>
+    </div>
   </div>
 </template>
 
 <script type='text/ecmascript-6'>
-import { mapGetters } from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
   name: 'VHeader',
   computed: {
-    ...mapGetters([
-      'doubleCity'
+    ...mapState([
+      'city'
     ])
+  },
+  methods: {
+    handleClickCity() {
+      this.$router.push('/city')
+    }
   }
 }
 </script>
