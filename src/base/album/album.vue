@@ -1,7 +1,10 @@
 <template>
   <div class="album">
     <div class="title border-bottom">
-      <div class="back">
+      <div
+        class="back"
+        @click="back"
+      >
         <i class="iconfont iconfanhui"></i>
       </div>
       景区图片
@@ -14,18 +17,43 @@
       <ul class="wrapper">
         <li
           class="img-item"
-          v-for="item in imgList"
+          v-for="(item, index) in imgList"
           :key="item.id"
         >
-          <img :src="item.url" />
+          <img
+            @click="toggleImg(index)"
+            :src="item.url"
+          />
         </li>
       </ul>
     </scroll>
     <div
-      class="gallary"
-      v-show="showGallary"
+      class="gallery"
+      v-show="showGallery"
+      @click="toggleImg"
     >
-      <div class="gallary-wrapper">123</div>
+      <swiper
+        :options="swiperOption"
+        id="gallery"
+        ref="galleryWrapper"
+        class="gallery-wrapper"
+        tag="div"
+      >
+        <swiper-slide
+          v-for="item in imgList"
+          :key="item.id"
+          class="gallery-item"
+        >
+          <img
+            class="swiper-img"
+            :src="item.url"
+          />
+        </swiper-slide>
+        <div
+          class="swiper-pagination"
+          slot="pagination"
+        ></div>
+      </swiper>
     </div>
   </div>
 </template>
@@ -34,7 +62,7 @@
 import Scroll from 'base/scroll/scroll'
 
 export default {
-  name: 'Gallary',
+  name: 'gallery',
   props: {
     imgList: {
       type: Array,
@@ -112,7 +140,31 @@ export default {
   },
   data() {
     return {
-      showGallary: false
+      swiperOption: {
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'fraction'
+        }
+      },
+      showGallery: false,
+      currentIndex: 0
+    }
+  },
+  computed: {
+    swiper() {
+      return this.$refs.galleryWrapper.swiper
+    }
+  },
+  methods: {
+    back() {
+      this.$router.back()
+    },
+    toggleImg(index) {
+      if (index) {
+        this.currentIndex = index
+      }
+      this.swiper.slideTo(this.currentIndex, 0, false)
+      this.showGallery = !this.showGallery
     }
   },
   components: {
@@ -169,17 +221,35 @@ export default {
         width: 50%
         img
           width: 100%
-  .gallary
-    display: flex
-    flex-direction: column
-    justify-content: center
+  .gallery
     position: fixed
     top: 0
     right: 0
     bottom: 0
     left: 0
     background: #000
-    z-index: 99
-    .wrapper
-      background: #fff
+    z-index: 5
+    .gallery-wrapper
+      display: flex
+      flex-direction: column
+      justify-content: center
+      width: 100%
+      height: 100%
+      >>> .swiper-wrapper
+        width: 100%
+        height: 0
+        padding-bottom: 68.57%
+        /* 这里如果加上overflow: hidden，会导致后边的图片不显示 */
+      .gallery-item
+        width: 100%
+        z-index: 6
+        .swiper-img
+          width: 100%
+          z-index: 6
+      .swiper-pagination
+        position: absolute
+        right: 0
+        bottom: 0.8rem
+        left: 0
+        color: $color-white
 </style>
