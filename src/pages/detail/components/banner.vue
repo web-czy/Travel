@@ -6,12 +6,6 @@
         @click="toAlbum"
         src="//img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_600x330_93d96bdf.jpg"
       />
-      <div
-        class="back"
-        @click="back"
-      >
-        <i class="iconfont iconfanhui"></i>
-      </div>
       <div class="banner-info">
         <div class="number">
           <i class="iconfont iconiconfontxingxing"></i>
@@ -48,21 +42,6 @@ export default {
   padding-bottom: 55%
   .img
     width: 100%
-  .back
-    position: absolute
-    left: 0.2rem
-    top: 0.2rem
-    width: 0.72rem
-    height: 0.72rem
-    line-height: 0.72rem
-    text-align: center
-    border-radius: 50%
-    background: rgba(0, 0, 0, 0.5)
-    z-index: 1
-    .iconfont
-      font-weight: bold
-      font-size: $font-size-large-x
-      color: $color-white
   .banner-info
     box-sizing: border-box
     padding: 0 0 0.15rem 0.2rem
