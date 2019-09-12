@@ -3,22 +3,28 @@
     <div
       class="header-abs"
       @click="back"
+      v-show="showAbs"
     >
       <i class="iconfont iconfanhui"></i>
     </div>
-    <div class="header-fixed">
+    <div class="header-fixed" ref="headerFixed">
       <div
         class="back"
         @click="back"
       >
         <i class="iconfont iconfanhui"></i>
       </div>
-      景区图片
+      北京欢乐谷
     </div>
   </div>
 </template>
 
 <script type='text/ecmascript-6'>
+import { prefixStyle } from 'assets/js/dom'
+
+const HEADER_HEIGHT = 44
+const opacity = prefixStyle('opacity')
+
 export default {
   name: 'DetailHeader',
   data() {
@@ -29,24 +35,30 @@ export default {
   },
   created() {
     const screenWidth = parseInt(document.documentElement.clientWidth)
-    this.bannerHeight = screenWidth * 0.55
+    this.topHeight = screenWidth * 0.55 - HEADER_HEIGHT
   },
   activated() {
     window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
+    back() {
+      this.$router.back()
+    },
     handleScroll() {
       const top = document.documentElement.scrollTop
-      let opcity = 0
-      const percent = top / this.bannerHeight
-      if (top > 0) {
-        this.showAbs = false
-      } else if (top <= this.bannerHeight) {
-        opcity = Math.min(percent, 1)
+      let opacityNumber = 0
+      const percent = top / this.topHeight
+      if (top === 0) {
+        opacityNumber = 0
+        this.showAbs = true
+      } else if (top > 0 && top <= this.topHeight) {
+        opacityNumber = Math.min(percent, 1)
         this.showAbs = false
       } else {
-        this.showAbs = true
+        opacityNumber = 1
+        this.showAbs = false
       }
+      this.$refs.headerFixed.style[opacity] = opacityNumber
     }
   }
 }
@@ -80,6 +92,7 @@ export default {
   font-size: $font-size-large
   color: $color-white
   background: $color-background
+  opacity: 0
   .back
     position: absolute
     top: 0
