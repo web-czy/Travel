@@ -13,29 +13,32 @@
         </li>
       </ul>
     </scroll>
-    <div class="gallery" v-show="showGallery" @click="toggleImg">
-      <swiper
-        :options="swiperOption"
-        id="gallery"
-        ref="galleryWrapper"
-        class="gallery-wrapper"
-        tag="div"
-      >
-        <swiper-slide
-          v-for="(item, index) in gallaryimgs"
-          :key="index"
-          class="gallery-item"
+    <fade-animation>
+      <div class="gallery" v-show="showGallery" @click="toggleImg">
+        <swiper
+          :options="swiperOption"
+          id="gallery"
+          ref="galleryWrapper"
+          class="gallery-wrapper"
+          tag="div"
         >
-          <img class="swiper-img" :src="item" />
-        </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
-      </swiper>
-    </div>
+          <swiper-slide
+            v-for="(item, index) in gallaryimgs"
+            :key="index"
+            class="gallery-item"
+          >
+            <img class="swiper-img" :src="item" />
+          </swiper-slide>
+          <div class="swiper-pagination" slot="pagination"></div>
+        </swiper>
+      </div>
+    </fade-animation>
   </div>
 </template>
 
 <script type='text/ecmascript-6'>
 import Scroll from 'base/scroll/scroll'
+import FadeAnimation from 'base/fade-animation/fade-animation'
 import { mapState } from 'vuex'
 
 export default {
@@ -84,7 +87,8 @@ export default {
     }
   },
   components: {
-    Scroll
+    Scroll,
+    FadeAnimation
   }
 }
 </script>
