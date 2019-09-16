@@ -29,7 +29,7 @@ export default new Router({
       component: Detail
     },
     {
-      path: '/album',
+      path: '/album/:id',
       name: 'album',
       component: Album
     }

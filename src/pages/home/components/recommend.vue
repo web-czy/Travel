@@ -1,16 +1,18 @@
 <template>
   <div class="recommend">
     <div class="recommend-title">
-      <img src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png" />
+      <img
+        src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png"
+      />
       <span>猜你喜欢</span>
     </div>
     <ul class="recommend-list">
       <li
         class="item"
-        :class="{'border-bottom': index < list.length - 1}"
+        :class="{ 'border-bottom': index < list.length - 1 }"
         v-for="(item, index) in list"
         :key="item.id"
-        @click="selectItem(item.id)"
+        @click="selectItem(item)"
       >
         <div class="img-wrapper">
           <div class="tag">{{ item.tag }}</div>
@@ -29,12 +31,10 @@
             <div class="evaluate">{{ item.evaluate }}条评论</div>
           </div>
           <div class="price">
-            <span>￥{{ item.price }}</span>起
+            <span>￥{{ item.price }}</span
+            >起
           </div>
-          <div
-            class="desc"
-            v-if="item.desc"
-          >
+          <div class="desc" v-if="item.desc">
             <span class="text">{{ item.desc }}</span>
           </div>
         </div>
@@ -45,6 +45,8 @@
 </template>
 
 <script type='text/ecmascript-6'>
+import { mapMutations } from 'vuex'
+
 export default {
   props: {
     list: {
@@ -55,9 +57,11 @@ export default {
     }
   },
   methods: {
-    selectItem(id) {
-      this.$router.push(`/detail/${id}`)
-    }
+    selectItem(item) {
+      this.$router.push(`/detail/${item.id}`)
+      this.changeScenic(item)
+    },
+    ...mapMutations(['changeScenic'])
   }
 }
 </script>

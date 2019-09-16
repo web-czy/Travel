@@ -3,6 +3,12 @@ export default {
     state.city = city;
     try {
       localStorage.city = city;
-    } catch (e) {}
+    } catch (e) { }
+  },
+  changeScenic(state, scenic) {
+    state.scenic = scenic;
+  },
+  changeGallaryImgs(state, gallaryimgs) {
+    state.gallaryimgs = gallaryimgs;
   }
 };

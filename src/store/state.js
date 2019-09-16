@@ -4,8 +4,10 @@ try {
   if (localStorage.city) {
     defaultCity = localStorage.city;
   }
-} catch (e) {}
+} catch (e) { }
 
 export default {
-  city: localStorage.city || defaultCity
+  city: localStorage.city || defaultCity,
+  scenic: {},
+  gallaryimgs: []
 };
