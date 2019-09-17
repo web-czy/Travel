@@ -1,37 +1,37 @@
 <template>
-  <div class="list">
-    <div
-      class="sort-list"
-      v-for="(sortList, sortIndex) in list"
-      :key="sortIndex"
-    >
-      <div class="sort-title border-bottom">
-        <span class="icon"></span>
-        <span>{{ sortList.title }}</span>
-      </div>
+  <transition name="commodity">
+    <div class="list">
       <div
-        class="item border-bottom"
-        v-for="(item, index) in sortList.sortList"
-        :key="index"
+        class="sort-list"
+        v-for="(sortList, sortIndex) in list"
+        :key="sortIndex"
       >
-        <div class="title" @click.stop="toggleList(item)">
-          <div class="text">{{ item.title }}</div>
-          <div class="minprice">
-            <span class="orange">
-              ￥
-              <span class="big">{{ minprice(item.ticketList) }}</span>
-            </span>
-            起 ∨
-          </div>
+        <div class="sort-title border-bottom">
+          <span class="icon"></span>
+          <span>{{ sortList.title }}</span>
         </div>
-        <transition name="commodity">
+        <div
+          class="item border-bottom"
+          v-for="(item, index) in sortList.sortList"
+          :key="index"
+        >
+          <div class="title" @click.stop="toggleList(item)">
+            <div class="text">{{ item.title }}</div>
+            <div class="minprice">
+              <span class="orange">
+                ￥
+                <span class="big">{{ minprice(item.ticketList) }}</span>
+              </span>
+              起 ∨
+            </div>
+          </div>
           <div class="list-commodity border-top" v-show="item.show">
             <detail-commodity :list="item.ticketList"></detail-commodity>
           </div>
-        </transition>
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script type='text/ecmascript-6'>
@@ -58,7 +58,6 @@ export default {
     toggleList(item) {
       let show = !item.show
       this.$set(item, 'show', show)
-      console.log(item.show)
     }
   },
   components: {
@@ -71,9 +70,12 @@ export default {
 @import '~assets/styles/varibles.styl'
 
 .commodity-enter-active, .commodity-leave-active
-  transition: opacity 0.5s
+  transition: all 2s linear
+  .list-commodity
+    transition: all 2s linear
 .commodity-enter, .commodity-leave-to
-  height: 0
+  .list-commodity
+    height: 0
 .list
   .sort-list
     margin-top: 0.2rem
@@ -111,6 +113,7 @@ export default {
               font-size: $font-size-large-m
       .list-commodity
         background: $color-title-bg
+        overflow: hidden
         &.border-top::before
           border-color: #dadada
         >>> .commodity

@@ -88,7 +88,6 @@ export default {
           this.$set(list, 'show', false)
         })
       })
-      console.log(this.detail.categoryList)
       return this.detail.categoryList
     },
     ...mapState(['scenic'])
@@ -167,7 +166,7 @@ export default {
     width: 0.8rem
     font-size: $font-size-large-x
 .detail
-  position: absolute
+  position: fixed
   top: 0
   right: 0
   bottom: 0
