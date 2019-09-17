@@ -7,9 +7,10 @@
       {{ scenic.title }}
     </div>
     <scroll
-      :data="home.recommendList"
+      :data="detail.categoryList"
       :probeType="probeType"
       :listenScroll="listenScroll"
+      :click="click"
       @scroll="scroll"
       class="detail"
       tag="div"
@@ -28,11 +29,14 @@
             <div class="title">{{ detail.sightName }}</div>
           </div>
         </div>
-        <detail-list :list="detail.categoryList"></detail-list>
-        <recommend
-          :list="home.recommendList"
-          class="white-bg margin-top"
-        ></recommend>
+        <div class="recommend">
+          <div class="recommend-header border-bottom">
+            <span class="icon"></span>
+            <span>去哪儿推荐</span>
+          </div>
+          <detail-commodity :list="detail.recommendList"></detail-commodity>
+        </div>
+        <detail-list :list="categoryList"></detail-list>
       </div>
     </scroll>
   </div>
@@ -41,9 +45,9 @@
 <script type='text/ecmascript-6'>
 import Scroll from 'base/scroll/scroll'
 import DetailList from './components/list'
-import Recommend from '../home/components/recommend'
+import DetailCommodity from './components/commodity'
 import { prefixStyle } from 'assets/js/dom'
-import { getHome, getDetail } from 'api'
+import { getDetail } from 'api'
 import { mapState, mapMutations } from 'vuex'
 
 const HEADER_HEIGHT = 44
@@ -56,17 +60,16 @@ export default {
       showAbs: true,
       opcity: 0,
       scrollY: 0,
-      detail: {},
-      home: {}
+      detail: {}
     }
   },
   mounted() {
-    this.getHomeInfo()
     this.getDetailInfo()
   },
   created() {
     this.probeType = 3
     this.listenScroll = true
+    this.click = true
     const screenWidth = parseInt(document.documentElement.clientWidth)
     this.topHeight = screenWidth * 0.55 - HEADER_HEIGHT
   },
@@ -76,6 +79,18 @@ export default {
     }
   },
   computed: {
+    categoryList() {
+      if (!this.detail.categoryList) {
+        return
+      }
+      this.detail.categoryList.forEach(allList => {
+        allList.sortList.forEach(list => {
+          this.$set(list, 'show', false)
+        })
+      })
+      console.log(this.detail.categoryList)
+      return this.detail.categoryList
+    },
     ...mapState(['scenic'])
   },
   methods: {
@@ -87,11 +102,6 @@ export default {
     },
     toAlbum() {
       this.$router.push(`/album/${this.detail.id}`)
-    },
-    getHomeInfo() {
-      getHome({ city: '北京' }).then(home => {
-        this.home = Object.assign({}, this.home, home)
-      })
     },
     getDetailInfo() {
       if (!this.scenic.id) {
@@ -129,7 +139,7 @@ export default {
   components: {
     Scroll,
     DetailList,
-    Recommend
+    DetailCommodity
   }
 }
 </script>
@@ -162,6 +172,10 @@ export default {
   right: 0
   bottom: 0
   left: 0
+  .white-bg
+    background: #ffffff
+  .margin-top
+    margin-top: 0.2rem
   .header-abs
     position: absolute
     left: 0.1rem
@@ -213,4 +227,20 @@ export default {
         line-height: 0.6rem
         font-size: $font-size-large-x
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7)
+  .recommend
+    margin-top: 0.2rem
+    padding-left: 0.2rem
+    background: $color-white
+    .recommend-header
+      display: flex
+      align-items: center
+      line-height: $headerHeight
+      font-size: $font-size-large
+      .icon
+        display: inline-block
+        width: 0.36rem
+        height: 0.36rem
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAflBMVEUAAAD/bm7/b2//b2//eXn/b2//b2//bm7/b2//b2//bm7/b2//b2//b2//bm7/b2//b2//cXH/eHj/qqr/bm7/////cXH/iIj/oqL//f3/mJj/fHz/9/f/8PD/4eH/ycn/6+v/1dX/0ND/t7f/ra3/kpL/jo7/c3P/5ub/vr7o37bEAAAAFHRSTlMA9uZeCfny7NvLt6+PfGZONxsRA/pz1k8AAAFrSURBVEjHpZbZdoMwDERtMEvYE8YJZN/b/v8PNvicJsiYqJzcB548WGNZksUAVWZJHAVBFCdZqQTDwk8lesjUX4hxVB5iQJiPbVMXHpx4RS0czGcYZTYXAyoPb/AqYeFLvEX61nqwEEUlwSKrnl9X/JtmZfl4Oq9d53Pfan2yzurvdAs42OsHaxAKYVDOA207wcEKShlBDhfaIUBu7lsIl2UjuIASLkZTsDaCxpWMFC7ORrCBRfqw7MxZY9Z/w0YqUWLI8tLqJ+25n8BSZP3Am+aG2/Vw1IQ9XmQiwZNV9z+0mkKtJCKmAg094IgXsYg4Ab0gkQh4wRUvgv8I1kTAh7QHCYk3fQIxnbCCHXokImMFPyCJKznB9gvkaijJ7XCnl0+kU3ZISQFttp3DnWW5oQVES3S57D4Eq0RJE+DJSZvh8RRpZDwFaZU8s5o0YxZvPrXdTx0on40sfih+Nnb5wT7x6fDR42Ty8+cXnHyOvDgQEbUAAAAASUVORK5CYII=') no-repeat
+        margin-right: 0.1rem
+        background-size: 0.36rem 0.36rem
 </style>
