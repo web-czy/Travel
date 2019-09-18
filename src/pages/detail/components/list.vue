@@ -1,37 +1,37 @@
 <template>
-  <transition name="commodity">
-    <div class="list">
+  <div class="list">
+    <div
+      class="sort-list"
+      v-for="(sortList, sortIndex) in list"
+      :key="sortIndex"
+    >
+      <div class="sort-title border-bottom">
+        <span class="icon"></span>
+        <span>{{ sortList.title }}</span>
+      </div>
       <div
-        class="sort-list"
-        v-for="(sortList, sortIndex) in list"
-        :key="sortIndex"
+        class="item border-bottom"
+        v-for="(item, index) in sortList.sortList"
+        :key="index"
       >
-        <div class="sort-title border-bottom">
-          <span class="icon"></span>
-          <span>{{ sortList.title }}</span>
-        </div>
-        <div
-          class="item border-bottom"
-          v-for="(item, index) in sortList.sortList"
-          :key="index"
-        >
-          <div class="title" @click.stop="toggleList(item)">
-            <div class="text">{{ item.title }}</div>
-            <div class="minprice">
-              <span class="orange">
-                ￥
-                <span class="big">{{ minprice(item.ticketList) }}</span>
-              </span>
-              起 ∨
-            </div>
+        <div class="title" @click.stop="toggleList(item)">
+          <div class="text">{{ item.title }}</div>
+          <div class="minprice">
+            <span class="orange">
+              ￥
+              <span class="big">{{ minprice(item.ticketList) }}</span>
+            </span>
+            起 ∨
           </div>
+        </div>
+        <transition name="commodity">
           <div class="list-commodity border-top" v-show="item.show">
             <detail-commodity :list="item.ticketList"></detail-commodity>
           </div>
-        </div>
+        </transition>
       </div>
     </div>
-  </transition>
+  </div>
 </template>
 
 <script type='text/ecmascript-6'>
@@ -69,13 +69,6 @@ export default {
 <style scoped lang='stylus' rel='stylesheet/stylus'>
 @import '~assets/styles/varibles.styl'
 
-.commodity-enter-active, .commodity-leave-active
-  transition: all 2s linear
-  .list-commodity
-    transition: all 2s linear
-.commodity-enter, .commodity-leave-to
-  .list-commodity
-    height: 0
 .list
   .sort-list
     margin-top: 0.2rem
@@ -114,6 +107,10 @@ export default {
       .list-commodity
         background: $color-title-bg
         overflow: hidden
+        &.commodity-enter-active, &.commodity-leave-active
+          transition: all 0.4s
+        &.commodity-enter, &.commodity-leave-to
+          opacity: 0
         &.border-top::before
           border-color: #dadada
         >>> .commodity

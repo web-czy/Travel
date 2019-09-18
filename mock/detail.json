@@ -1,0 +1,612 @@
+{
+  "errno": 0,
+  "data": [
+    {
+      "id": "30001",
+      "sightName": "北京欢乐谷(AAAA景区)",
+      "bannerImg": "http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_600x330_93d96bdf.jpg",
+      "gallaryImgs": [
+        "http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_r_800x800_087730c7.jpg",
+        "http://img1.qunarzz.com/sight/p0/1906/e7/e7276de002459b50a3.img.jpg_350x240_dd696261.jpg",
+        "http://img1.qunarzz.com/sight/p0/1906/e8/e88430aafb498100a3.img.jpg_350x240_cc778652.jpg",
+        "http://img1.qunarzz.com/sight/p0/1906/cc/cc590ab5b51a5ea9a3.img.jpg_350x240_b1fcc759.jpg",
+        "http://img1.qunarzz.com/sight/p0/1906/cd/cdc0a756c33a26cfa3.img.jpg_350x240_5de2d8cd.jpg",
+        "http://img1.qunarzz.com/sight/p0/1906/2e/2ec8175b939ab865a3.img.jpg_350x240_703f0021.jpg",
+        "http://img1.qunarzz.com/sight/p0/1901/46/46416618f4ae8e95a3.img.png_350x240_d56775a9.png",
+        "http://img1.qunarzz.com/sight/p0/1508/a5/4003f9dd7bebf61eccbf64046e26d487.water.jpg_350x240_e11745bd.jpg",
+        "http://img1.qunarzz.com/sight/p0/1901/ef/efd26a627912c27ca3.img.png_350x240_d9b778bd.png",
+        "http://img1.qunarzz.com/sight/p0/1507/b0/debf337993099d34013807df5cf5545b.water.jpg_350x240_84df370a.jpg",
+        "http://img1.qunarzz.com/sight/p0/1507/b9/7ce37fa2e77ad7b9cb49d54352c8e357.water.jpg_350x240_4df3818f.jpg",
+        "http://img1.qunarzz.com/sight/p0/1508/a3/0a981148deab444887db5088456ce7f9.water.jpg_350x240_d9594f37.jpg",
+        "http://img1.qunarzz.com/sight/p0/1811/2e/2e195fce24b4dbd2a3.img.jpg_350x240_c5c45068.jpg",
+        "http://img1.qunarzz.com/sight/p0/1811/a2/a282cb20136e0344a3.img.jpg_350x240_c08e48cd.jpg",
+        "http://img1.qunarzz.com/sight/p0/1811/8d/8dcb39276ec90746a3.img.jpg_350x240_7638e231.jpg",
+        "http://img1.qunarzz.com/sight/p0/1507/33/ea7e61b806182a1212ef3954cf38c0ed.water.jpg_350x240_fb6d6c2d.jpg",
+        "http://img1.qunarzz.com/sight/p0/1811/38/38b55b637dd41deea3.img.jpg_350x240_2e7a269a.jpg"
+      ],
+      "recommendList": [
+        {
+          "title": "【活动票】北京欢乐谷夜场成人票",
+          "desc": "14:00前随买随用",
+          "label": [
+            {
+              "iconUrl": "https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png",
+              "text": "自营"
+            },
+            {
+              "text": "无需换票"
+            },
+            {
+              "text": "随时退"
+            }
+          ],
+          "price": 66.6
+        },
+        {
+          "title": "北京欢乐谷（全天）门票成人票(全民团圆全天特惠票  9.9-9.22 )",
+          "desc": "23:55前可订明日",
+          "label": [
+            {
+              "text": "随时退"
+            }
+          ],
+          "price": 150
+        },
+        {
+          "title": "[全天]北京欢乐谷成人票",
+          "desc": "16:30前随买随用",
+          "label": [
+            {
+              "iconUrl": "https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png",
+              "text": "自营"
+            },
+            {
+              "text": "无需换票"
+            },
+            {
+              "text": "条件退"
+            }
+          ],
+          "price": 295
+        }
+      ],
+      "categoryList": [
+        {
+          "title": "活动票",
+          "sortList": [
+            {
+              "title": "[夜场]成人票",
+              "ticketList": [
+                {
+                  "title": "【活动票】北京欢乐谷夜场成人票",
+                  "desc": "14:00前随买随用",
+                  "label": [
+                    {
+                      "iconUrl": "https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png",
+                      "text": "自营"
+                    },
+                    {
+                      "text": "无需换票"
+                    },
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "去哪儿直销",
+                  "price": 66.6
+                },
+                {
+                  "title": "北京欢乐谷（夜场）门票成人票(9.23-10.7 夜场特惠票)",
+                  "desc": "13:55前随买随用",
+                  "label": [
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "蓝精灵",
+                  "price": 66.6
+                },
+                {
+                  "title": "【刷身份证入园无需换票】北京欢乐谷夜场票（17点后入园）",
+                  "desc": "14:00前随买随用",
+                  "label": [
+                    {
+                      "text": "无需换票"
+                    },
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "先行旅游网",
+                  "price": 66.6
+                }
+              ]
+            },
+            {
+              "title": "[全天]成人票 （9.9-9.22）",
+              "ticketList": [
+                {
+                  "title": "北京欢乐谷（全天）门票成人票(全民团圆全天特惠票  9.9-9.22 )",
+                  "desc": "23:55前可订明日",
+                  "label": [
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "蓝精灵",
+                  "price": 150
+                },
+                {
+                  "title": "北京欢乐谷全民团圆全天特惠票 （9.9-9.22）",
+                  "desc": "23:00前可订明日",
+                  "label": [
+                    {
+                      "text": "无需换票"
+                    },
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "明珠旅游",
+                  "price": 155
+                },
+                {
+                  "title": "北京欢乐谷全天门票-成人票（9.9-9.22）",
+                  "desc": "23:55前可订明日",
+                  "label": [
+                    {
+                      "text": "无需换票"
+                    },
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "西安新干线旅游",
+                  "price": 155
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "门票",
+          "sortList": [
+            {
+              "title": "[全天]成人票",
+              "ticketList": [
+                {
+                  "title": "北京欢乐谷（全天）门票成人票(6.28-11.17)",
+                  "desc": "16:30前随买随用",
+                  "label": [
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "蓝精灵",
+                  "price": 295
+                },
+                {
+                  "title": "[全天]北京欢乐谷成人票",
+                  "desc": "16:30前随买随用",
+                  "label": [
+                    {
+                      "iconUrl": "https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png",
+                      "text": "自营"
+                    },
+                    {
+                      "text": "无需换票"
+                    },
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "去哪儿直销",
+                  "price": 295
+                }
+              ]
+            },
+            {
+              "title": "[全天]成人票 （9.9-9.22）",
+              "ticketList": [
+                {
+                  "title": "北京欢乐谷夜场成人票",
+                  "desc": "20:00前随买随用",
+                  "label": [
+                    {
+                      "iconUrl": "https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png",
+                      "text": "自营"
+                    },
+                    {
+                      "text": "无需换票"
+                    },
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "去哪儿直销",
+                  "price": 195
+                },
+                {
+                  "title": "北京欢乐谷（夜场）门票成人票(4月8日-11月17日)",
+                  "desc": "20:00前随买随用",
+                  "label": [
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "蓝精灵",
+                  "price": 195
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "蹦床馆",
+          "sortList": [
+            {
+              "title": "[上午场]成人票",
+              "ticketList": [
+                {
+                  "title": "[上午场]北京欢乐谷失重星球蹦床馆成人票",
+                  "desc": "可订明日",
+                  "label": [
+                    {
+                      "iconUrl": "https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png",
+                      "text": "自营"
+                    },
+                    {
+                      "text": "条件退"
+                    }
+                  ],
+                  "ascription": "去哪儿直销",
+                  "price": 58
+                },
+                {
+                  "title": "北京欢乐谷（夜场）门票成人票(4月8日-11月17日)",
+                  "desc": "可订明日",
+                  "label": [
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "蓝精灵",
+                  "price": 58
+                }
+              ]
+            },
+            {
+              "title": "[全天]成人票",
+              "ticketList": [
+                {
+                  "title": "北京欢乐谷夜场成人票",
+                  "desc": "16:00前随买随用",
+                  "label": [
+                    {
+                      "iconUrl": "https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png",
+                      "text": "自营"
+                    },
+                    {
+                      "text": "条件退"
+                    }
+                  ],
+                  "ascription": "去哪儿直销",
+                  "price": 88
+                },
+                {
+                  "title": "北京欢乐谷（夜场）门票成人票(4月8日-11月17日)",
+                  "desc": "16:00前随买随用",
+                  "label": [
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "蓝精灵",
+                  "price": 88
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "30002",
+      "sightName": "奥林匹克塔",
+      "bannerImg": "http://img1.qunarzz.com/sight/p0/1804/1a/1a48cc20b0d6ed44a3.img.jpg_600x330_3f524da7.jpg",
+      "gallaryImgs": [
+        "http://img1.qunarzz.com/sight/p0/1804/1a/1a48cc20b0d6ed44a3.img.jpg_350x240_8b1488b0.jpg",
+        "http://img1.qunarzz.com/sight/p0/1804/cf/cfab40f6cd9d80f1a3.img.jpg_350x240_57952850.jpg",
+        "http://img1.qunarzz.com/sight/p0/1804/b6/b68ccb778c685283a3.img.jpg_350x240_e804feaf.jpg",
+        "http://img1.qunarzz.com/sight/p0/1804/34/34787df3fb2592e8a3.img.jpg_350x240_cd47fd2a.jpg",
+        "http://img1.qunarzz.com/sight/p0/1804/9a/9aef54d3531b99fa3.img.jpg_350x240_a34462ec.jpg",
+        "http://img1.qunarzz.com/sight/p0/1804/50/502e4f170c4aca98a3.img.jpg_350x240_19da0290.jpg",
+        "http://img1.qunarzz.com/sight/p0/1804/5f/5f59c2661add425aa3.img.jpg_350x240_a88c8940.jpg",
+        "http://img1.qunarzz.com/sight/p0/1804/9b/9b10719fa4d346b0a3.img.jpg_350x240_0d4a6b96.jpg"
+      ],
+      "recommendList": [
+        {
+          "title": "[夜场]奥林匹克塔成人票",
+          "desc": "21:00前随买随用",
+          "label": [
+            {
+              "iconUrl": "https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png",
+              "text": "自营"
+            },
+            {
+              "text": "随时退"
+            }
+          ],
+          "price": 138
+        },
+        {
+          "title": "[日场]奥林匹克塔成人票",
+          "desc": "可订明日",
+          "label": [
+            {
+              "iconUrl": "https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png",
+              "text": "自营"
+            },
+            {
+              "text": "随时退"
+            }
+          ],
+          "price": 138
+        },
+        {
+          "title": "[夜场票]奥林匹克塔双人票",
+          "desc": "21:00前随买随用",
+          "label": [
+            {
+              "iconUrl": "https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png",
+              "text": "自营"
+            },
+            {
+              "text": "随时退"
+            }
+          ],
+          "price": 270
+        }
+      ],
+      "categoryList": [
+        {
+          "title": "活动票",
+          "sortList": [
+            {
+              "title": "[夜场]成人票",
+              "ticketList": [
+                {
+                  "title": "【活动票】北京欢乐谷夜场成人票",
+                  "desc": "14:00前随买随用",
+                  "label": [
+                    {
+                      "iconUrl": "https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png",
+                      "text": "自营"
+                    },
+                    {
+                      "text": "无需换票"
+                    },
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "去哪儿直销",
+                  "price": 66.6
+                },
+                {
+                  "title": "北京欢乐谷（夜场）门票成人票(9.23-10.7 夜场特惠票)",
+                  "desc": "13:55前随买随用",
+                  "label": [
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "蓝精灵",
+                  "price": 66.6
+                },
+                {
+                  "title": "【刷身份证入园无需换票】北京欢乐谷夜场票（17点后入园）",
+                  "desc": "14:00前随买随用",
+                  "label": [
+                    {
+                      "text": "无需换票"
+                    },
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "先行旅游网",
+                  "price": 66.6
+                }
+              ]
+            },
+            {
+              "title": "[全天]成人票 （9.9-9.22）",
+              "ticketList": [
+                {
+                  "title": "北京欢乐谷（全天）门票成人票(全民团圆全天特惠票  9.9-9.22 )",
+                  "desc": "23:55前可订明日",
+                  "label": [
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "蓝精灵",
+                  "price": 150
+                },
+                {
+                  "title": "北京欢乐谷全民团圆全天特惠票 （9.9-9.22）",
+                  "desc": "23:00前可订明日",
+                  "label": [
+                    {
+                      "text": "无需换票"
+                    },
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "明珠旅游",
+                  "price": 155
+                },
+                {
+                  "title": "北京欢乐谷全天门票-成人票（9.9-9.22）",
+                  "desc": "23:55前可订明日",
+                  "label": [
+                    {
+                      "text": "无需换票"
+                    },
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "西安新干线旅游",
+                  "price": 155
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "门票",
+          "sortList": [
+            {
+              "title": "[全天]成人票",
+              "ticketList": [
+                {
+                  "title": "北京欢乐谷（全天）门票成人票(6.28-11.17)",
+                  "desc": "16:30前随买随用",
+                  "label": [
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "蓝精灵",
+                  "price": 295
+                },
+                {
+                  "title": "[全天]北京欢乐谷成人票",
+                  "desc": "16:30前随买随用",
+                  "label": [
+                    {
+                      "iconUrl": "https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png",
+                      "text": "自营"
+                    },
+                    {
+                      "text": "无需换票"
+                    },
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "去哪儿直销",
+                  "price": 295
+                }
+              ]
+            },
+            {
+              "title": "[全天]成人票 （9.9-9.22）",
+              "ticketList": [
+                {
+                  "title": "北京欢乐谷夜场成人票",
+                  "desc": "20:00前随买随用",
+                  "label": [
+                    {
+                      "iconUrl": "https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png",
+                      "text": "自营"
+                    },
+                    {
+                      "text": "无需换票"
+                    },
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "去哪儿直销",
+                  "price": 195
+                },
+                {
+                  "title": "北京欢乐谷（夜场）门票成人票(4月8日-11月17日)",
+                  "desc": "20:00前随买随用",
+                  "label": [
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "蓝精灵",
+                  "price": 195
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "蹦床馆",
+          "sortList": [
+            {
+              "title": "[上午场]成人票",
+              "ticketList": [
+                {
+                  "title": "[上午场]北京欢乐谷失重星球蹦床馆成人票",
+                  "desc": "可订明日",
+                  "label": [
+                    {
+                      "iconUrl": "https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png",
+                      "text": "自营"
+                    },
+                    {
+                      "text": "条件退"
+                    }
+                  ],
+                  "ascription": "去哪儿直销",
+                  "price": 58
+                },
+                {
+                  "title": "北京欢乐谷（夜场）门票成人票(4月8日-11月17日)",
+                  "desc": "可订明日",
+                  "label": [
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "蓝精灵",
+                  "price": 58
+                }
+              ]
+            },
+            {
+              "title": "[全天]成人票",
+              "ticketList": [
+                {
+                  "title": "北京欢乐谷夜场成人票",
+                  "desc": "16:00前随买随用",
+                  "label": [
+                    {
+                      "iconUrl": "https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png",
+                      "text": "自营"
+                    },
+                    {
+                      "text": "条件退"
+                    }
+                  ],
+                  "ascription": "去哪儿直销",
+                  "price": 88
+                },
+                {
+                  "title": "北京欢乐谷（夜场）门票成人票(4月8日-11月17日)",
+                  "desc": "16:00前随买随用",
+                  "label": [
+                    {
+                      "text": "随时退"
+                    }
+                  ],
+                  "ascription": "蓝精灵",
+                  "price": 88
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,24 +1,15 @@
 <template>
   <div class="home">
     <v-header></v-header>
-    <scroll
-      class="wrapper"
-      :data="home"
-    >
+    <scroll class="wrapper" :data="home">
       <div>
         <v-swiper :list="home.swiperList"></v-swiper>
-        <icons
-          :list="home.iconList"
-          class="white-bg"
-        ></icons>
+        <icons :list="home.iconList" class="white-bg"></icons>
         <recommend
           :list="home.recommendList"
           class="white-bg margin-top"
         ></recommend>
-        <weekend
-          :list="home.weekendList"
-          class="white-bg margin-top"
-        ></weekend>
+        <weekend :list="home.weekendList" class="white-bg margin-top"></weekend>
       </div>
     </scroll>
   </div>
@@ -57,7 +48,7 @@ export default {
   },
   methods: {
     getHomeInfo() {
-      getHome({ city: this.city }).then((home) => {
+      getHome().then(home => {
         this.home = Object.assign({}, this.home, home)
       })
     }

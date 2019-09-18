@@ -30,11 +30,9 @@ let vendor = (() => {
 
 export function prefixStyle(style) {
   if (vendor === false) {
-    console.log('false')
     return false;
   }
   if (vendor === 'standard') {
-    console.log('standard')
     return 'style';
   }
   return vendor + style.charAt(0).toUpperCase() + style.substr(1);
